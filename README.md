@@ -1,1 +1,0 @@
-# spring-core-all-operation-project

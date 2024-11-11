@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+   
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd
+    ">
+    <!-- STANDALONE LIST ctrl+space se lis show ho jayegeee-->
+    
+    <!-- AGAR HAME VEctor Chahiye to LinkedList ko htakar vector kar sakte hain YE FAYDA HOTA HAI STRONGALONE collection ka-->
+    <util:list list-class="java.util.LinkedList" id="mybestfriends">
+   
+    <value>Aman</value>
+    <value>Rman</value>
+    <value>Chaman</value>
+    <value>Kaman</value>
+    
+    </util:list>
+    
+   <!-- standalone map -->
+   
+   <util:map map-class="java.util.TreeMap" id="fees">
+   
+ <entry key=" spring framework" value="8000"/>
+   
+<entry key=" Django framework" value="5000"/>
+   
+   <entry key=" Hibernate framework" value="2000"/>
+   
+   </util:map>
+   
+   <!-- STANDALONE properties -->
+   <util:properties id="dbconfig">
+   
+   <prop key="driver"> com.mysql.jdbc.Driver</prop>
+   
+     <prop key="username">VIMLESH</prop>
+   
+     <prop key="password"> vimlesh@1234</prop>
+   
+     <prop key="url"> mysql.jdbc://localhost:3307/databse</prop>
+   
+   </util:properties>
+   
+   
+   
+   
+   
+   
+   
+    <!-- mybestfriends ID KE THRUV -->
+   <!-- bean ka name="person1 hai -->
+   <bean class="com.springcore.standalone.collections.Person" name="person1">
+   
+  
+  
+  
+   <!--<property name="friends">
+   
+   <list></list> HM LOG ARRAYLIST KA OBJECT NAHI BANAYENGE hm is property ke lie local list nahi banayenge Uper use karenge util schema
+    aur uper hi banayenge util schema list 
+   
+   <ref bean="mybestfriends"/>
+   </property>-->
+   
+  <!-- ISKO AS A ATTRIBUTE USE KAR SAKTE HAIN 1bean ko dobara bna sakte hain -->
+   
+   <property name="friends" ref="mybestfriends"/>
+   
+   <property name="feestructure" ref="fees"/>
+   
+   <property name="properties" ref="dbconfig"/>
+   </bean>
+   
+   
+ <!-- properties already ak class hoti hai jo hashtable ko extends kartee hai-->  
+   
+    </beans>

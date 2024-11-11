@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    
+    
+    http://www.springframework.org/schema/context/spring-context.xsd">    
+ 
+ <!-- agar bean ka name address variable se mil jata hai to value print kara dega aur agar nahi match hta t null -->
+ <!-- agar bytype ka use kiya hai to value print ho jayegi agar mul bean decleare hai to  -->
+
+
+<context:annotation-config />
+
+<!-- ye type annotatin ka use kar rha hai RECOMMENDED HAI KI VARABLE NAME AUR SAME RKHO SAME NAME likhne ki jarurat tbhi hoti hai jab byNmae use karna ho name="temp" kuchh bhi likh sakte hain-->
+
+<!-- agar do bean declare kar diya hai aur usko ek bean ki need hai exception throw kar dega -->
+<bean class="com.springcore.auto.wire.annotation.Address" name="temp1">
+<property name="street" value="Temp Street"/>
+<property name="city" value="Delhi"/>
+</bean> 
+
+
+<bean class="com.springcore.auto.wire.annotation.Address" name="temp2">
+<property name="street" value="Second Street"/>
+<property name="city" value="Lucknow"/>
+</bean> 
+
+<bean class="com.springcore.auto.wire.annotation.Emp" name="emp1" />
+
+ </beans>
+ 

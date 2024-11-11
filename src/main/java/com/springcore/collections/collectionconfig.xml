@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">    
+    
+   <bean name="emp1" class="com.springcore.collections.Emp">
+   
+   <property name="name" value="VIMLESH"/>
+   <property name="phones">
+   
+   <value>8887557317</value>
+<!--  
+   <list>
+   <value>64378930</value>
+<value>7734678272</value>
+<value>8749897298</value>
+ ham log list ki value ko simply likh sakhte hai
+<null/>
+   </list>
+   LIST SET JO HAIN VAH PROPERTY KE LIE LOCAL HAIN INHE PROPERTY KE BAHAR USE NAHI KAR SAKTE HAIN Not stand alone collections-->
+   
+    </property>
+   
+   <!-- hme batane ki need nahi hoti hai ki kaun se set,list,map me ki value chahiye hame -->
+ <property name="addresses">
+   <set>
+   <value>GOPALPUR</value>
+ <value>Kanpur</value>
+ <value>Lucknow</value>
+ </set>
+ 
+ </property>
+   
+   <property name="courses">
+   <map>
+   <entry key="java" value="2month"/>
+   <entry key="pythan" value="1.2month"/>
+   <entry key="c" value="1month"/>
+   
+   </map>
+   </property>
+   </bean>
+ </beans>
+ 

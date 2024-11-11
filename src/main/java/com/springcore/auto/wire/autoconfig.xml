@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">    
+ 
+ <!-- agar bean ka name address variable se mil jata hai to value print kara dega aur agar nahi match hta t null -->
+ <!-- agar bytype ka use kiya hai to value print ho jayegi agar mul bean decleare hai to  -->
+<bean class="com.springcore.auto.wire.Address" name="address">
+<property name="street" value="Temp Street"/>
+<property name="city" value="Delhi"/>
+</bean>
+
+<!-- bytype ka use karenge to value print kar dega Address address(variable) ko match karta hai 
+<bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="byName"/>-->
+
+<!-- agar bytype ka use karte hai to "com.springcore.auto.wire.Address" isko indicate karta hai agar usko address vali bean mil jatee hai to print kar dega agar nahi milti hai to null dedega-->
+<!-- <bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="byType"/>-->
+
+
+<!-- 1 type ke do bean is case me 2obj hai kaun sa print kiya jaye-->
+<bean class="com.springcore.auto.wire.Address" name="address2">
+<property name="street" value="Second Street"/>
+<property name="city" value="Kanpur"/>
+</bean>
+
+<!-- dono beans me setter injection call ho raha hai simpy setter method call kar rha hai setter injection call karne ke lie-->
+ 
+ <!--<bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="byName"/>-->
+
+<bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="constructor"/>
+
+
+
+ </beans>
+ 
